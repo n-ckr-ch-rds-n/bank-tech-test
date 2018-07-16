@@ -5,6 +5,7 @@ function Account() {
 
 Account.prototype.deposit = function (amount) {
   this.balance += amount;
+  this.logTransaction(new Date().toLocaleDateString("en-GB"), amount, "Deposit")
 };
 
 Account.prototype.withdraw = function (amount) {

@@ -10,6 +10,13 @@ describe("Account", function() {
       expect(account.balance).toBe(100);
     });
 
+    it("writes to #logTransaction", function() {
+      account.balance = 0;
+      account.transactions = [];
+      account.deposit(100);
+      expect(account.transactions.length).toBe(1);
+    })
+
   })
 
   describe("#withdraw", function() {
@@ -25,6 +32,7 @@ describe("Account", function() {
   describe("#logTransaction", function() {
 
     it("logs transactions in the transaction ledger", function() {
+      account.transactions = [];
       account.logTransaction("14/01/2012", 100, "Deposit")
       expect(account.transactions[0][0]).toBe("14/01/2012")
       expect(account.transactions[0][1]).toBe(100)
