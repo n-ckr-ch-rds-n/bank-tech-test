@@ -49,13 +49,4 @@ describe("Account", function() {
 
   })
 
-  describe("#printStatement", function() {
-
-    it("logs bank statement to the console", function() {
-      spyOn(console, 'log');
-      account.printStatement();
-      expect(console.log).toHaveBeenCalledWith("date || credit || debit || balance");
-    })
-
-  });
 })
