@@ -1,7 +1,10 @@
 Bank Tech Test
 ==============
 
-Practice tech test completed in JavaScript in week 10 of the Makers Academy coding bootcamp course. This app satisfies the following requirements:
+Practice tech test completed in JavaScript in week 10 of the Makers Academy coding bootcamp course.
+The app is a simple banking app that allows users to make deposits and withdrawals and to print a bank statement with the date of each transaction on it. Initially one Account class took care of all functionality, but I later, in keeping with the single responsibility principle, extracted statement-printing to a new Printer class. 
+
+ This app satisfies the following requirements:
 
  * You can interact with the code via the JavaScript console.
  * Sums can be deposited and withdrawn.
@@ -30,3 +33,4 @@ Clone the repo, open index.html, open the console and you're away.
 ## Tests
 
 The tests are written in Jasmine. Open jasmine/SpecRunner.html to run them.
+Run `npm install` to install ESlint and run linting reports.  
