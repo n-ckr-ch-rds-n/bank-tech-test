@@ -7,6 +7,10 @@ Account.prototype.deposit = function (amount) {
   this.balance += amount;
 };
 
+Account.prototype.withdraw = function (amount) {
+  this.balance -= amount;
+};
+
 Account.prototype.logTransaction = function (date, amount, type) {
   this.transactions.push([date, amount, type]);
 };

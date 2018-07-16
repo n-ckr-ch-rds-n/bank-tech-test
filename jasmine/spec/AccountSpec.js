@@ -5,8 +5,19 @@ describe("Account", function() {
   describe("#deposit", function() {
 
     it("increases the account balance", function() {
+      account.balance = 0;
       account.deposit(100);
       expect(account.balance).toBe(100);
+    });
+
+  })
+
+  describe("#withdraw", function() {
+
+    it("decreases the account balance", function() {
+      account.balance = 50;
+      account.withdraw(50);
+      expect(account.balance).toBe(0);
     });
 
   })
