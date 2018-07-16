@@ -27,6 +27,14 @@ describe("Account", function() {
       expect(account.balance).toBe(0);
     });
 
+    it("writes to #logTransaction", function() {
+      account.balance = 50;
+      account.transactions = [];
+      account.withdraw(10);
+      expect(account.transactions.length).toBe(1);
+      expect(account.transactions[0][2]).toBe("Withdrawal");
+    })
+
   })
 
   describe("#logTransaction", function() {

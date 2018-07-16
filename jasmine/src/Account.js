@@ -10,6 +10,7 @@ Account.prototype.deposit = function (amount) {
 
 Account.prototype.withdraw = function (amount) {
   this.balance -= amount;
+  this.logTransaction(new Date().toLocaleDateString("en-GB"), amount, "Withdrawal")
 };
 
 Account.prototype.logTransaction = function (date, amount, type) {
