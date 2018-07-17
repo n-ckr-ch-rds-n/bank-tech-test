@@ -14,7 +14,7 @@ describe ("User makes withdrawal", function () {
     expect(interface.withdraw(50)).toBe("Error: insufficient funds")
   });
 
-  it('user attempts to deposit cat', function() {
+  it('user attempts to withdraw cat', function() {
     expect(interface.withdraw('cat')).toBe("Error: withdrawal amount must be a number")
   });
 
