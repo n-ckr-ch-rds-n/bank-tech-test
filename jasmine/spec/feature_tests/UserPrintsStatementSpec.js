@@ -1,4 +1,4 @@
-describe ("User makes deposit", function () {
+describe ("User prints statement", function () {
   var interface;
 
   beforeEach(function() {
@@ -8,7 +8,7 @@ describe ("User makes deposit", function () {
   it('user prints statement with no transaction history', function() {
     spyOn(console, 'log');
     interface.printStatement();
-    expect(console.log).toHaveBeenCalledWith("date || credit || debit || balance");
+    expect(console.log).toHaveBeenCalledWith("date || credit || debit || balance\n");
   });
 
 })
