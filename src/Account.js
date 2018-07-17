@@ -1,18 +1,25 @@
 function Account() {
-  this.balance = 0;
-  this.transactions = [];
+  this._balance = 0;
+  this._printer = new Printer;
+  this._ledger = new Ledger;
 }
 
-Account.prototype.deposit = function (amount) {
-  this.balance += amount;
-  this.logTransaction(new Date().toLocaleDateString("en-GB"), amount, "Deposit", this.balance)
+Account.prototype.increaseBalance = function (amount) {
+  this._balance += amount;
+  this._ledger.logTransaction({
+    'date': new Date().toLocaleDateString("en-GB"),
+    'amount': amount,
+    'type': "Deposit",
+    'balance': this._balance
+  })
 };
 
-Account.prototype.withdraw = function (amount) {
-  this.balance -= amount;
-  this.logTransaction(new Date().toLocaleDateString("en-GB"), amount, "Withdrawal", this.balance)
-};
-
-Account.prototype.logTransaction = function (date, amount, type, balance) {
-  this.transactions.push([date, amount, type, balance]);
+Account.prototype.decreaseBalance = function (amount) {
+  this._balance -= amount;
+  this._ledger.logTransaction({
+    'date': new Date().toLocaleDateString("en-GB"),
+    'amount': amount,
+    'type': "Withdrawal",
+    'balance': this._balance
+  })
 };

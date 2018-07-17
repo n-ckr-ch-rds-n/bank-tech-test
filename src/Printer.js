@@ -1,12 +1,12 @@
 function Printer() {}
 
-Printer.prototype.printStatement = function (transactions) {
+Printer.prototype.statement = function (transactions) {
   console.log("date || credit || debit || balance");
   transactions.reverse().forEach(function(transaction) {
-    if (transaction[2] === "Deposit") {
-      console.log(`${transaction[0]} || ${transaction[1]} || || ${transaction[3]}`);
-    } else if (transaction[2] === "Withdrawal") {
-      console.log(`${transaction[0]} || || ${transaction[1]} || ${transaction[3]}`);
+    if (transaction['type'] === "Deposit") {
+      console.log(`${transaction['date']} || ${transaction['amount'].toFixed(2)} || || ${transaction['balance']}`);
+    } else if (transaction['type'] === "Withdrawal") {
+      console.log(`${transaction['date']} || || ${transaction['amount'].toFixed(2)} || ${transaction['balance']}`);
     }
   });
 };
