@@ -16,6 +16,8 @@ Interface.prototype.deposit = function (amount) {
 Interface.prototype.withdraw = function (amount) {
   if (this._account._balance-amount < 0) {
     return "Error: insufficient funds"
+  } else if (typeof amount != "number") {
+    return "Error: withdrawal amount must be a number"
   } else {
     this._account.decreaseBalance(amount);
   }
