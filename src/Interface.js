@@ -5,6 +5,8 @@ function Interface() {
 Interface.prototype.deposit = function (amount) {
   if (amount <= 0) {
     return "Error: deposit amount must be greater than 0"
+  } else if (typeof amount != "number") {
+    return "Error: deposit amount must be a number"
   } else {
     this._account.increaseBalance(amount);
   }
