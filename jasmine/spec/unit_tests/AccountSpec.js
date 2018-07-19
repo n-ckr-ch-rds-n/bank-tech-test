@@ -13,10 +13,10 @@ describe("Account", function() {
       expect(account._balance).toBe(100);
     });
 
-    it("writes to _ledger.logTransaction", function() {
-      spyOn(account._ledger, 'logTransaction')
+    it("writes to ledger.logTransaction", function() {
+      spyOn(account.getLedger(), 'logTransaction')
       account.increaseBalance(100);
-      expect(account._ledger.logTransaction).toHaveBeenCalled();
+      expect(account.getLedger().logTransaction).toHaveBeenCalled();
     });
 
   })
@@ -29,11 +29,11 @@ describe("Account", function() {
       expect(account._balance).toBe(50);
     });
 
-    it("writes to _ledger.logTransaction", function() {
-      spyOn(account._ledger, 'logTransaction')
+    it("writes to ledger.logTransaction", function() {
+      spyOn(account.getLedger(), 'logTransaction')
       account.increaseBalance(100);
       account.decreaseBalance(50);
-      expect(account._ledger.logTransaction).toHaveBeenCalled();
+      expect(account.getLedger().logTransaction).toHaveBeenCalled();
     });
 
   });

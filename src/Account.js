@@ -5,7 +5,7 @@ function Account(ledger = new Ledger()) {
 
 Account.prototype.increaseBalance = function (amount) {
   this._balance += amount;
-  this._ledger.logTransaction({
+  this.getLedger().logTransaction({
     'date': new Date().toLocaleDateString("en-GB"),
     'amount': amount,
     'type': "Deposit",
@@ -15,7 +15,7 @@ Account.prototype.increaseBalance = function (amount) {
 
 Account.prototype.decreaseBalance = function (amount) {
   this._balance -= amount;
-  this._ledger.logTransaction({
+  this.getLedger().logTransaction({
     'date': new Date().toLocaleDateString("en-GB"),
     'amount': amount,
     'type': "Withdrawal",
@@ -24,5 +24,9 @@ Account.prototype.decreaseBalance = function (amount) {
 };
 
 Account.prototype.getTransactions = function () {
-  return this._ledger._transactions;
+  return this.getLedger()._transactions;
+};
+
+Account.prototype.getLedger = function () {
+  return this._ledger;
 };
