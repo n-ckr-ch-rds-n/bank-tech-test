@@ -1,6 +1,6 @@
 function Printer() {}
 
-Printer.prototype.statement = function (transactions) {
+Printer.prototype.getStatement = function (transactions) {
   var statementString = this.getString(transactions);
   console.log(statementString);
 };

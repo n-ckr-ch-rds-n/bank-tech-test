@@ -1,6 +1,7 @@
 describe("Printer", function () {
   var printer;
   var transactionsDouble;
+  var transactionsDouble2;
 
   beforeEach(function() {
     printer = new Printer;
@@ -22,7 +23,7 @@ describe("Printer", function () {
 
     it("calls console log", function() {
       spyOn(console, 'log');
-      printer.statement(transactionsDouble1)
+      printer.getStatement(transactionsDouble1)
       expect(console.log).toHaveBeenCalledWith("date || credit || debit || balance\n14/01/2012 || 100.00 || || 200.00\n");
     })
 

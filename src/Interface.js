@@ -1,5 +1,6 @@
-function Interface() {
-  this._account = new Account;
+function Interface(account = new Account(), printer = new Printer()) {
+  this._account = account;
+  this._printer = printer;
 }
 
 Interface.prototype.deposit = function (amount) {
@@ -23,7 +24,7 @@ Interface.prototype.withdraw = function (amount) {
 };
 
 Interface.prototype.printStatement = function () {
-  this._account._printer.statement(this._account._ledger._transactions);
+  this._printer.getStatement(this._account.getTransactions());
 };
 
 Interface.prototype.getBalance = function () {

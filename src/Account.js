@@ -1,7 +1,6 @@
-function Account() {
+function Account(ledger = new Ledger()) {
   this._balance = 0;
-  this._printer = new Printer;
-  this._ledger = new Ledger;
+  this._ledger = ledger;
 }
 
 Account.prototype.increaseBalance = function (amount) {
@@ -22,4 +21,8 @@ Account.prototype.decreaseBalance = function (amount) {
     'type': "Withdrawal",
     'balance': this._balance
   })
+};
+
+Account.prototype.getTransactions = function () {
+  return this._ledger._transactions;
 };
