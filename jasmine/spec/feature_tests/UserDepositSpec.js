@@ -6,7 +6,8 @@ describe ("User makes deposit", function () {
   })
 
   it('user deposits 100 pounds', function() {
-    expect(interface.deposit(100)).toBe(100)
+    interface.deposit(100);
+    expect(interface.getBalance()).toBe(100);
   });
 
   it('user attempts to deposit -100 pounds', function() {

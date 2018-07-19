@@ -10,7 +10,6 @@ Interface.prototype.deposit = function (amount) {
   } else {
     this._account.increaseBalance(amount);
   }
-  return this._account._balance;
 };
 
 Interface.prototype.withdraw = function (amount) {
@@ -21,9 +20,12 @@ Interface.prototype.withdraw = function (amount) {
   } else {
     this._account.decreaseBalance(amount);
   }
-  return this._account._balance;
 };
 
 Interface.prototype.printStatement = function () {
   this._account._printer.statement(this._account._ledger._transactions);
+};
+
+Interface.prototype.getBalance = function () {
+  return this._account._balance;
 };
