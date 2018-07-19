@@ -10,11 +10,11 @@ describe ("User makes deposit", function () {
   });
 
   it('user attempts to deposit -100 pounds', function() {
-    expect(interface.deposit(-100)).toBe("Error: deposit amount must be greater than 0")
+    expect(function() { interface.deposit(-100) }).toThrow(Error("Deposit amount must be greater than 0"));
   });
 
   it('user attempts to deposit cat', function() {
-    expect(interface.deposit('cat')).toBe("Error: deposit amount must be a number")
+    expect(function() { interface.deposit('cat') }).toThrow(Error("Deposit amount must be a number"));
   });
 
 })

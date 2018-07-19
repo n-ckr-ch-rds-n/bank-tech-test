@@ -11,11 +11,11 @@ describe ("User makes withdrawal", function () {
   });
 
   it('user attempts to more money than he/she has', function() {
-    expect(interface.withdraw(50)).toBe("Error: insufficient funds")
+    expect(function() { interface.withdraw(50) }).toThrow(Error("Insufficient funds"))
   });
 
   it('user attempts to withdraw cat', function() {
-    expect(interface.withdraw('cat')).toBe("Error: withdrawal amount must be a number")
+    expect(function() { interface.withdraw('cat') }).toThrow(Error("Withdrawal amount must be a number"))
   });
 
 })

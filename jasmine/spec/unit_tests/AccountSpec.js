@@ -3,7 +3,7 @@ describe("Account", function() {
   var account;
 
   beforeEach(function() {
-    account = new Account;
+    account = new Account();
   })
 
   describe("#deposit", function() {
