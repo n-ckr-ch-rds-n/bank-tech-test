@@ -1,9 +1,11 @@
 describe("Account", function() {
 
   var account;
+  var mockLedger;
 
   beforeEach(function() {
-    account = new Account();
+    mockLedger = { logTransaction: jasmine.createSpy('logTransaction') }
+    account = new Account(mockLedger);
   })
 
   describe("#deposit", function() {
@@ -14,9 +16,8 @@ describe("Account", function() {
     });
 
     it("writes to ledger.logTransaction", function() {
-      spyOn(account.getLedger(), 'logTransaction')
       account.increaseBalance(100);
-      expect(account.getLedger().logTransaction).toHaveBeenCalled();
+      expect(mockLedger.logTransaction).toHaveBeenCalled();
     });
 
   })
@@ -30,10 +31,9 @@ describe("Account", function() {
     });
 
     it("writes to ledger.logTransaction", function() {
-      spyOn(account.getLedger(), 'logTransaction')
       account.increaseBalance(100);
       account.decreaseBalance(50);
-      expect(account.getLedger().logTransaction).toHaveBeenCalled();
+      expect(mockLedger.logTransaction).toHaveBeenCalled();
     });
 
   });
