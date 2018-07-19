@@ -24,5 +24,5 @@ Account.prototype.decreaseBalance = function (amount) {
 };
 
 Account.prototype.getTransactions = function () {
-  return this._ledger._transactions;
+  return this._ledger.getTransactions();
 };
