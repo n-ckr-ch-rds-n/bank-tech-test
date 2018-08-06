@@ -2,7 +2,7 @@ Bank Tech Test
 ==============
 
 Practice tech test completed in JavaScript in week 10 of the Makers Academy coding bootcamp course. The app is a simple banking app that allows users to make deposits and withdrawals and to print a bank statement with the date of each transaction on it. 
-Though the app is simple, the code has been written to embody best programming practices. It is fully tested and tests were used to drive development (TDD), the single responsibility principle is followed to the letter, dependency injection is used to isolate classes from each other, and classes are isolated from each other in the tests using mocks and spies. 
+Though the app is simple, the code has been written to embody best programming practices. It is fully tested and tests were used to drive development (TDD), the single responsibility principle is followed to the letter, dependency injection is used to isolate classes from each other, and classes are isolated from each other in the tests using mocks and spies. The code is easy to read and easy to change.
 
 This app satisfies the following requirements:
 
